@@ -18,8 +18,8 @@ const getJobberTemplate = (options = []) => {
 		return `
 		<ul class="list__row">
 			<li class="list__item">${index + 1}</li>
-			<li class="list__item">${option.Name}</li>
 			<li class="list__item">${option.SecondName}</li>
+			<li class="list__item">${option.Name}</li>
 			<li class="list__item">${option.Surname}</li>
 			<li class="list__item">${option.Job}</li>
 		</ul>
@@ -32,8 +32,8 @@ const getJobberTemplate = (options = []) => {
 const jobber = new Jobber("jobber", {
 	jobber: [
 		{
-			Name: "Петров",
-			SecondName: "Пётр",
+			Name: "Пётр",
+			SecondName: "Петров",
 			Surname: "Петрович",
 			Job: "грузчик"
 		},
