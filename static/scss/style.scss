@@ -6,6 +6,11 @@ body{
 	width: 100%;
 }
 
+.container{
+	max-width: 1060px;
+	margin: 0 auto;
+}
+
 h2{
 	margin: 0;
 	padding: 0;
@@ -21,6 +26,8 @@ h2{
 	overflow: hidden;
 }
 
+
+// login screen
 .bg__img{
 	position: absolute;
 	top: 0;
@@ -238,6 +245,215 @@ h2{
 		}
 		&:hover{
 			opacity: .7;
+		}
+	}
+}
+
+// -------------------------header-------------------------
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(136, 42, 42, 0.5);
+	backdrop-filter: blur(15px);
+	border-bottom: 1px dashed #8f2c24;
+	// .header__body
+	&__body {
+		padding: 10px;
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	// .header__row
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 8px;
+	}
+
+	// .header__item
+	&__item {
+		flex: 1 1 auto;
+		padding: 5px 7px;
+		outline: none;
+		border-radius: 5px;
+		height: 100%;
+		background-color: #8f2c24;
+		border: none;
+		border: 1px solid transparent;
+		&:hover{
+			border: 1px solid black;
+		}
+		&:active{
+			border: 1px solid black;
+			opacity: .5;
+		}
+	}
+
+	// .header__btn
+	&__btn {
+		text-decoration: none;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		span{
+			color: #fff;
+			word-wrap: break-word;
+		}
+	}
+
+	// .header__login
+	&__login {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 8px;
+	}
+
+	// .header__name
+	&__name {
+	}
+}
+
+// -------------------------main form-------------------------
+.mainform {
+	margin-top: 70px;
+	width: 100%;
+
+	// .mainform__content
+	&__content{
+		width: 100%;
+		padding: 0 10px;
+		display: flex;
+		justify-content: space-between;
+		gap: 40px;
+	}
+
+	// .mainform__list
+	&__list {
+	}
+
+	// .mainform__preview
+	&__preview {
+	}
+}
+.search {
+	// .search__body
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		gap: 30px;
+	}
+
+	// .search__select
+	&__select {
+	}
+
+	// .search__input
+	&__input {
+	}
+
+	// .search__btn
+	&__btn {
+	}
+}
+
+.list {
+	// .list__search
+	&__search {
+		margin: 0 auto 20px;
+		display: flex;
+		justify-content: center;
+		max-width: 600px;
+	}
+
+	// .list__body
+	&__body{}
+
+	// .list__row
+	&__row {
+		display: grid;
+		grid-template-columns: 40px 1fr 1fr 1fr 1fr;
+		justify-content: space-between;
+		align-items: center;
+		gap: 10px;
+		&-t{
+			font-weight: bold;
+		}
+	}
+
+	// .list__item
+	&__item {
+		&:nth-child(1){
+			text-align: center;
+		}
+	}
+}
+
+.preview {
+
+	// .preview__title
+
+	&__title {
+	}
+
+	// .preview__body
+	&__body {
+		padding: 5px;
+		border: 1px dashed #8f2c24;
+	}
+
+	// .preview__row
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-content: space-between;
+		align-items: center;
+		gap: 10px;
+	}
+
+	// .preview__item
+	&__item {
+		display: flex;
+		justify-content: end;
+		margin-bottom: 10px;
+		&:nth-child(1){
+			justify-content: start;
+		}
+	}
+
+	// .preview__inputname
+	&__inputname {
+	}
+
+	// .preview__input
+	&__input {
+	}
+
+	// .preview__btn
+	&__btn {
+		padding: 5px 10px;
+		outline: none;
+		border-radius: 5px;
+		height: 100%;
+		background-color: #8f2c24;
+		border: none;
+		border: 1px solid transparent;
+		text-decoration: none;
+		&:hover{
+			border: 1px solid black;
+		}
+		&:active{
+			border: 1px solid black;
+			opacity: .5;
+		}
+		span{
+			color: #fff;
 		}
 	}
 }

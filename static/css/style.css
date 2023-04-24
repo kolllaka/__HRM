@@ -6,6 +6,11 @@ body {
   width: 100%;
 }
 
+.container {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
 h2 {
   margin: 0;
   padding: 0;
@@ -271,4 +276,136 @@ h2 {
 }
 .login__link:hover {
   opacity: 0.7;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(136, 42, 42, 0.5);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  border-bottom: 1px dashed #8f2c24;
+}
+.header__body {
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.header__item {
+  flex: 1 1 auto;
+  padding: 5px 7px;
+  outline: none;
+  border-radius: 5px;
+  height: 100%;
+  background-color: #8f2c24;
+  border: none;
+  border: 1px solid transparent;
+}
+.header__item:hover {
+  border: 1px solid black;
+}
+.header__item:active {
+  border: 1px solid black;
+  opacity: 0.5;
+}
+.header__btn {
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__btn span {
+  color: #fff;
+  word-wrap: break-word;
+}
+.header__login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.mainform {
+  margin-top: 70px;
+  width: 100%;
+}
+.mainform__content {
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+.search__body {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.list__search {
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+}
+.list__row {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.list__row-t {
+  font-weight: bold;
+}
+.list__item:nth-child(1) {
+  text-align: center;
+}
+
+.preview__body {
+  padding: 5px;
+  border: 1px dashed #8f2c24;
+}
+.preview__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.preview__item {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 10px;
+}
+.preview__item:nth-child(1) {
+  justify-content: start;
+}
+.preview__btn {
+  padding: 5px 10px;
+  outline: none;
+  border-radius: 5px;
+  height: 100%;
+  background-color: #8f2c24;
+  border: none;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+.preview__btn:hover {
+  border: 1px solid black;
+}
+.preview__btn:active {
+  border: 1px solid black;
+  opacity: 0.5;
+}
+.preview__btn span {
+  color: #fff;
 }

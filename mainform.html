@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./static/css/null.css">
+	<link rel="stylesheet" href="./static/css/style.css">
+	<title>главная форма</title>
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<header class="header">
+			<div class="container">
+				<div class="header__body">
+					<ul class="header__row">
+						<li class="header__item"><a href="#" class="header__btn"><span>Новое личное дело</span></a></li>
+						<li class="header__item"><a href="#" class="header__btn"><span>Перевод сотрудника</span></a></li>
+						<li class="header__item"><a href="#" class="header__btn"><span>Увольнение сотрудника</span></a></li>
+						<li class="header__item"><a href="#" class="header__btn"><span>Архив</span></a></li>
+					</ul>
+
+					<div class="header__row">
+						<div class="header__name"><span>Гига Бухгалтер 3000</span></div>
+						<div class="header__item">
+							<a href="#" class="header__btn"><span>Выход</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<section class="mainform">
+			<div class="container">
+
+				<!-- Список -->
+				<div class="mainform__content">
+					<div class="mainform__list list">
+
+						<!-- Поиск -->
+						<div class="list__search search">
+							<form class="search__body">
+								<select class="search__select" name="" id="">
+									<option value="subname" selected>фамилия</option>
+									<option value="name">имя</option>
+									<option value="secondname">отчество</option>
+									<option value="job">должность</option>
+								</select>
+								<input class="search__input" type="text">
+								<input class="search__btn" value="Поиск" type="submit">
+							</form>
+						</div>
+						<ul class="list__row list__row-t">
+							<li class="list__item">№№</li>
+							<li class="list__item">Фамилия</li>
+							<li class="list__item">Имя</li>
+							<li class="list__item">Отчество</li>
+							<li class="list__item">Должность</li>
+						</ul>
+
+						<div id="jobber" class="list__body">
+							<ul class="list__row">
+								<li class="list__item">1</li>
+								<li class="list__item">Петров</li>
+								<li class="list__item">Пётр</li>
+								<li class="list__item">Петрович</li>
+								<li class="list__item">грузчик</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mainform__preview preview">
+						<div class="preview__title">Личные данные сотрудника</div>
+						<div class="preview__body">
+							<ul class="preview__row">
+								<li class="preview__item">
+									<label for="FIO" class="preview__inputname">ФИО</label>
+								</li>
+								<li class="preview__item">
+									<input id="FIO" class="preview__input" type="text">
+								</li>
+							</ul>
+							<ul class="preview__row">
+								<li class="preview__item">
+									<label for="job" class="preview__inputname">Должность</label>
+								</li>
+								<li class="preview__item">
+									<input id="job" class="preview__input" type="text">
+								</li>
+							</ul>
+							<ul class="preview__row">
+								<li class="preview__item">
+									<label for="birthday" class="preview__inputname">Дата рождения</label>
+								</li>
+								<li class="preview__item">
+									<input id="birthday" class="preview__input" type="text">
+								</li>
+							</ul>
+							<ul class="preview__row">
+								<li class="preview__item">
+									<label for="placebirhday" class="preview__inputname">Место рождения</label>
+								</li>
+								<li class="preview__item">
+									<input id="placebirhday" class="preview__input" type="text">
+								</li>
+							</ul>
+							<ul class="preview__row">
+								<li class="preview__item">
+									<label for="study" class="preview__inputname">Образование</label>
+								</li>
+								<li class="preview__item">
+									<input id="study" class="preview__input" type="text">
+								</li>
+							</ul>
+							<ul class="preview__row">
+								<li class="preview__item">
+									<label for="adress" class="preview__inputname">Адрес проживания</label>
+								</li>
+								<li class="preview__item">
+									<input id="adress" class="preview__input" type="text">
+								</li>
+							</ul>
+							<ul class="preview__row">
+								<li class="preview__item">
+									<label for="telephone" class="preview__inputname">Телефон</label>
+								</li>
+								<li class="preview__item">
+									<input id="telephone" class="preview__input" type="text">
+								</li>
+							</ul>
+							<ul class="preview__row">
+								<li class="preview__item">
+								</li>
+								<li class="preview__item">
+									<a href="#" class="preview__btn"><span>Показать личное дело</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+<script src="./static/js/script.js"></script>
+
+</html>
