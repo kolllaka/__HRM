@@ -362,9 +362,18 @@ h2 {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 .list__row-t {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
   font-weight: bold;
+}
+.list__row.active {
+  background-color: #8f2c24;
 }
 .list__item:nth-child(1) {
   text-align: center;

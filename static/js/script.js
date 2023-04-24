@@ -51,3 +51,21 @@ const jobber = new Jobber("jobber", {
 		}
 	]
 })
+
+let listBody = document.querySelector(".list__body"),
+	listRows = document.querySelectorAll(".list__row");
+
+listBody.addEventListener("click", (e) => {
+	const row = e.target.closest(".list__row")
+
+	if (row.classList.contains("active")) {
+		return
+	}
+
+	if (listRows) {
+		listRows.forEach((listRow) => {
+			listRow.classList.remove('active')
+		})
+	}
+	row.classList.add('active');
+})

@@ -382,8 +382,17 @@ h2{
 		justify-content: space-between;
 		align-items: center;
 		gap: 10px;
+		cursor: pointer;
 		&-t{
+			display: grid;
+			grid-template-columns: 40px 1fr 1fr 1fr 1fr;
+			justify-content: space-between;
+			align-items: center;
+			gap: 10px;
 			font-weight: bold;
+		}
+		&.active{
+			background-color: #8f2c24;
 		}
 	}
 
