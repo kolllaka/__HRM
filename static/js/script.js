@@ -192,14 +192,20 @@ const fillReview = ($el, jobber = {}) => {
 			return
 		}
 
-		if (type == "dismissdate") {
+		if (type == "dismissdate" || type == "dateofcompletion" || type == "date") {
 			const date = new Date();
 			previewInput.value = formateDate()
 
 			return
 		}
 
-		previewInput.value = jobber[type];
+		if (jobber[type]) {
+			previewInput.value = jobber[type];
+
+			return
+		}
+
+		previewInput.value = ""
 	})
 }
 
