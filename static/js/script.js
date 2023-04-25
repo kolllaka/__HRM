@@ -23,6 +23,7 @@ class Jobber {
 	}
 
 	jobberListHandler($event) {
+		$event.preventDefault();
 		const row = $event.target.closest(".list__row"),
 			uid = row.dataset.uid;
 		this.uid = uid;
@@ -44,6 +45,7 @@ class Jobber {
 	}
 
 	jobberHandler($event) {
+		$event.preventDefault();
 		if (!$event.target.closest(".poppup__btn")) {
 			return
 		}
@@ -153,6 +155,7 @@ const jobber = new Jobber("jobber", {
 })
 
 document.addEventListener("click", (e) => {
+	e.preventDefault();
 	if (e.target.closest('.close')) {
 		const poppup = e.target.closest(".poppup");
 		if (poppup) {
