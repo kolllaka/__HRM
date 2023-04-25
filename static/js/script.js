@@ -32,9 +32,9 @@ class Jobber {
 			})
 		}
 
-		const jober = this.options.jobber.filter(jober => jober.UID === uid)[0];
+		const jober = this.options.jobber.filter(jober => jober.uid === uid)[0];
 
-		fillReview(jober);
+		fillReview(preview, jober);
 		row.classList.add('active');
 	}
 }
@@ -42,12 +42,12 @@ class Jobber {
 const getJobberTemplate = (options = []) => {
 	let jobbersTemplate = options.map((option, index) => {
 		return `
-		<ul class="list__row" data-uid=${option.UID}>
+		<ul class="list__row" data-uid=${option.uid}>
 			<li class="list__item">${index + 1}</li>
-			<li class="list__item">${option.SecondName}</li>
-			<li class="list__item">${option.Name}</li>
-			<li class="list__item">${option.Surname}</li>
-			<li class="list__item">${option.Job}</li>
+			<li class="list__item">${option.secondName}</li>
+			<li class="list__item">${option.name}</li>
+			<li class="list__item">${option.surname}</li>
+			<li class="list__item">${option.job}</li>
 		</ul>
 		`
 	})
@@ -58,47 +58,47 @@ const getJobberTemplate = (options = []) => {
 const jobber = new Jobber("jobber", {
 	jobber: [
 		{
-			UID: "a7b6580c-e333-11ed-b5ea-0242ac120002",
-			Name: "Пётр",
-			SecondName: "Петров",
-			Surname: "Петрович",
-			Job: "грузчик",
-			Birthday: "",
-			Placebirhday: "",
-			Study: "",
-			Adress: "",
-			Telephone: "+7(967)873-17-36"
+			uid: "a7b6580c-e333-11ed-b5ea-0242ac120002",
+			name: "Пётр",
+			secondName: "Петров",
+			surname: "Петрович",
+			job: "грузчик",
+			birthday: "",
+			placebirhday: "",
+			study: "",
+			adress: "",
+			telephone: "+7(967)873-17-36"
 		},
 		{
-			UID: "ac6405d4-e333-11ed-b5ea-0242ac120002",
-			Name: "Вадим",
-			SecondName: "Радионович",
-			Surname: "Ежак",
-			Job: "грузчик",
-			Birthday: "",
-			Placebirhday: "",
-			Study: "",
-			Adress: "",
-			Telephone: ""
+			uid: "ac6405d4-e333-11ed-b5ea-0242ac120002",
+			name: "Вадим",
+			secondName: "Радионович",
+			surname: "Ежак",
+			job: "грузчик",
+			birthday: "",
+			placebirhday: "",
+			study: "",
+			adress: "",
+			telephone: ""
 		},
 		{
-			UID: "b749e450-e333-11ed-b5ea-0242ac120002",
-			Name: "Гига",
-			SecondName: "Чад",
-			Surname: "Ёбырев",
-			Job: "модер",
-			Birthday: "",
-			Placebirhday: "",
-			Study: "",
-			Adress: "",
-			Telephone: ""
+			uid: "b749e450-e333-11ed-b5ea-0242ac120002",
+			name: "Гига",
+			secondName: "Чад",
+			surname: "Ёбырев",
+			job: "модер",
+			birthday: "",
+			placebirhday: "",
+			study: "",
+			adress: "",
+			telephone: ""
 		}
 	]
 })
 
 let listBody = document.querySelector(".list__body"),
 	listRows = document.querySelectorAll(".list__row"),
-	previewBody = document.querySelector(".preview__body");
+	preview = document.querySelector(".mainform__preview");
 
 // listBody.addEventListener("click", (e) => {
 // 	const row = e.target.closest(".list__row"),
@@ -117,16 +117,38 @@ let listBody = document.querySelector(".list__body"),
 // 	row.classList.add('active');
 // })
 
-const fillReview = (jobber = {}) => {
-	document.getElementById("FIO").value = getFullName(jobber);
-	document.getElementById("job").value = jobber.Job;
-	document.getElementById("birthday").value = jobber.Birthday;
-	document.getElementById("placebirhday").value = jobber.Placebirhday;
-	document.getElementById("study").value = jobber.Study;
-	document.getElementById("adress").value = jobber.Adress;
-	document.getElementById("telephone").value = jobber.Telephone;
+const fillReview = ($el, jobber = {}) => {
+	$el.querySelectorAll(".poppup__input").forEach((previewInput) => {
+		const type = previewInput.dataset.type
+		if (!type) {
+			return
+		}
+
+		if (type == "fio") {
+			previewInput.value = getFullName(jobber);
+
+			return
+		}
+
+		previewInput.value = jobber[type]
+	})
 }
 
 const getFullName = (jobber = {}) => {
-	return `${jobber.SecondName} ${jobber.Name[0]}. ${jobber.Surname[0]}.`
+	return `${jobber.secondName} ${jobber.name[0]}. ${jobber.surname[0]}.`
 }
+
+
+const newJobberBtn = document.querySelector(".showjobber"),
+	newJobberPoppup = document.querySelector('.poppupAddjobber'),
+	newJobberCloseBtn = newJobberPoppup.querySelector('.close');
+
+newJobberBtn.addEventListener("click", (e) => {
+	newJobberPoppup.classList.add('show');
+})
+
+const closePoppup = ($el) => {
+	$el.classList.remove('show');
+}
+newJobberCloseBtn.addEventListener('click', (e) => closePoppup(newJobberPoppup))
+

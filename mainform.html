@@ -17,16 +17,16 @@
 			<div class="container">
 				<div class="header__body">
 					<ul class="header__row">
-						<li class="header__item"><a href="#" class="header__btn"><span>Новое личное дело</span></a></li>
-						<li class="header__item"><a href="#" class="header__btn"><span>Перевод сотрудника</span></a></li>
-						<li class="header__item"><a href="#" class="header__btn"><span>Увольнение сотрудника</span></a></li>
-						<li class="header__item"><a href="#" class="header__btn"><span>Архив</span></a></li>
+						<li class="header__item"><a href="#" class="header__btn btn"><span>Новое личное дело</span></a></li>
+						<li class="header__item"><a href="#" class="header__btn btn"><span>Календарь отчётности</span></a>
+						</li>
+						<li class="header__item"><a href="#" class="header__btn btn"><span>Архив</span></a></li>
 					</ul>
 
 					<div class="header__row">
 						<div class="header__name"><span>Гига Бухгалтер 3000</span></div>
 						<div class="header__item">
-							<a href="#" class="header__btn"><span>Выход</span></a>
+							<a href="#" class="header__btn btn"><span>Выход</span></a>
 						</div>
 					</div>
 				</div>
@@ -64,77 +64,149 @@
 						<div id="jobber">
 						</div>
 					</div>
-					<div class="mainform__preview preview">
-						<div class="preview__body">
-							<div class="preview__title">Личные данные сотрудника</div>
-							<ul class="preview__row">
-								<li class="preview__item">
-									<label for="FIO" class="preview__inputname">ФИО</label>
+					<div class="mainform__preview poppup">
+						<div class="poppup__body">
+							<div class="poppup__title">Личные данные сотрудника</div>
+							<label class="poppup__row">
+								<li class="poppup__item">ФИО</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="fio" type="text">
 								</li>
-								<li class="preview__item">
-									<input id="FIO" class="preview__input" type="text">
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Должность</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="job" type="text">
 								</li>
-							</ul>
-							<ul class="preview__row">
-								<li class="preview__item">
-									<label for="job" class="preview__inputname">Должность</label>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Дата рождения</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="birthday" type="text">
 								</li>
-								<li class="preview__item">
-									<input id="job" class="preview__input" type="text">
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Место рождения</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="placebirhday" type="text">
 								</li>
-							</ul>
-							<ul class="preview__row">
-								<li class="preview__item">
-									<label for="birthday" class="preview__inputname">Дата рождения</label>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Образование</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="study" type="text">
 								</li>
-								<li class="preview__item">
-									<input id="birthday" class="preview__input" type="text">
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Адрес проживания</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="adress" type="text">
 								</li>
-							</ul>
-							<ul class="preview__row">
-								<li class="preview__item">
-									<label for="placebirhday" class="preview__inputname">Место рождения</label>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Телефон</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="telephone" type="text">
 								</li>
-								<li class="preview__item">
-									<input id="placebirhday" class="preview__input" type="text">
-								</li>
-							</ul>
-							<ul class="preview__row">
-								<li class="preview__item">
-									<label for="study" class="preview__inputname">Образование</label>
-								</li>
-								<li class="preview__item">
-									<input id="study" class="preview__input" type="text">
-								</li>
-							</ul>
-							<ul class="preview__row">
-								<li class="preview__item">
-									<label for="adress" class="preview__inputname">Адрес проживания</label>
-								</li>
-								<li class="preview__item">
-									<input id="adress" class="preview__input" type="text">
-								</li>
-							</ul>
-							<ul class="preview__row">
-								<li class="preview__item">
-									<label for="telephone" class="preview__inputname">Телефон</label>
-								</li>
-								<li class="preview__item">
-									<input id="telephone" class="preview__input" type="text">
-								</li>
-							</ul>
-							<ul class="preview__row">
-								<li class="preview__item">
-								</li>
-								<li class="preview__item">
-									<a href="#" class="preview__btn"><span>Показать личное дело</span></a>
-								</li>
-							</ul>
+							</label>
+							<div class="poppup__buttons">
+								<a href="#" class="poppup__btn showjobber btn"><span>Показать личное дело</span></a>
+								<a href="#" class="poppup__btn btn"><span>Перевод сотрудника</span></a>
+								<a href="#" class="poppup__btn btn"><span>Увольнение сотрудника</span></a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+
+		<div class="poppupAddjobber poppup">
+			<div class="poppup__body">
+				<div class="poppup__title">Личные данные сотрудника</div>
+				<label class="poppup__row">
+					<li class="poppup__item">Фамилия</li>
+					<li class="poppup__item">
+						<input class="poppup__input" type="text">
+					</li>
+				</label>
+				<label class="poppup__row">
+					<li class="poppup__item">Имя</li>
+					<li class="poppup__item">
+						<input class="poppup__input" type="text">
+					</li>
+				</label>
+				<label class="poppup__row">
+					<li class="poppup__item">Отчество</li>
+					<li class="poppup__item">
+						<input class="poppup__input" type="text">
+					</li>
+				</label>
+				<label class="poppup__row">
+					<li class="poppup__item">Дата рождения</li>
+					<li class="poppup__item">
+						<input class="poppup__input" type="text">
+					</li>
+				</label>
+				<label class="poppup__row">
+					<li class="poppup__item">Место рождения</li>
+					<li class="poppup__item">
+						<input class="poppup__input" type="text">
+					</li>
+				</label>
+				<label class="poppup__row">
+					<li class="poppup__item">Адрес проживания</li>
+					<li class="poppup__item">
+						<input class="poppup__input" type="text">
+					</li>
+				</label>
+				<label class="poppup__row">
+					<li class="poppup__item">Паспортные данные</li>
+					<li class="poppup__item">
+						<input class="poppup__input" type="text">
+					</li>
+				</label>
+				<label class="poppup__row">
+					<li class="poppup__item">Сведения о браке</li>
+					<li class="poppup__item">
+						<input class="poppup__input" type="text">
+					</li>
+				</label>
+				<label class="poppup__row">
+					<li class="poppup__item">Состав семьи</li>
+					<li class="poppup__item">
+						<input class="poppup__input" type="text">
+					</li>
+				</label>
+				<label class="poppup__row">
+					<li class="poppup__item">Сведения о воинском учёте</li>
+					<li class="poppup__item">
+						<input class="poppup__input" type="text">
+					</li>
+				</label>
+				<label class="poppup__row">
+					<li class="poppup__item">Знания языков</li>
+					<li class="poppup__item">
+						<input class="poppup__input" type="text">
+					</li>
+				</label>
+				<label class="poppup__row">
+					<li class="poppup__item">Образование</li>
+					<li class="poppup__item">
+						<input class="poppup__input" type="text">
+					</li>
+				</label>
+				<label class="poppup__row">
+					<li class="poppup__item">Телефон</li>
+					<li class="poppup__item">
+						<input class="poppup__input" type="text">
+					</li>
+				</label>
+				<div class="poppup__buttons">
+					<a href="#" class="poppup__btn btn"><span>Сохранить изменения</span></a>
+					<a href="#" class="poppup__btn close btn"><span>Закрыть личное дело</span></a>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 <script src="./static/js/script.js"></script>

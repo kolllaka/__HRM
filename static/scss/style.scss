@@ -278,33 +278,11 @@ h2{
 
 	// .header__item
 	&__item {
-		flex: 1 1 auto;
-		padding: 5px 7px;
-		outline: none;
-		border-radius: 5px;
-		height: 100%;
-		background-color: #8f2c24;
-		border: none;
-		border: 1px solid transparent;
-		&:hover{
-			border: 1px solid black;
-		}
-		&:active{
-			border: 1px solid black;
-			opacity: .5;
-		}
 	}
 
 	// .header__btn
 	&__btn {
-		text-decoration: none;
-		display: inline-flex;
-		justify-content: center;
-		align-items: center;
-		span{
-			color: #fff;
-			word-wrap: break-word;
-		}
+		padding: 5px 7px;
 	}
 
 	// .header__login
@@ -405,64 +383,107 @@ h2{
 }
 
 .preview {
+}
 
-	// .preview__title
+// Poppups 
+.poppupAddjobber {
+	display: none;
+	position: absolute;
+	inset: 0;
+	background-color: rgba(#fff, .5);
+	backdrop-filter: blur(2px);
 
-	&__title {
+	// .poppup__body
+	.poppup__body {
+		padding: 20px 10px;
+		margin: 10vh auto 0;
+		max-width: 600px;
+		background-color: white;
+		border: 3px solid black;
 	}
+}
 
-	// .preview__body
+.poppup {
+	&.show{
+		display: block;
+	}
+	// .poppup__body
 	&__body {
-		padding: 5px;
-		border: 1px dashed #8f2c24;
+		
 	}
 
-	// .preview__row
+	// .poppup__title
+	&__title{
+		margin-bottom: 10px;
+	}
+
+	// .poppup__row
 	&__row {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		justify-content: space-between;
 		align-items: center;
+		grid-template-columns: 200px 1fr;
 		gap: 10px;
+		cursor: pointer;
 	}
 
-	// .preview__item
+	// .poppup__item
 	&__item {
+		list-style: none;
+		margin-bottom: 5px;
+		&:last-child{
+			display: flex;
+			justify-content: space-between;
+			gap: 30px;
+		}
+	}
+
+	// .poppup__input
+	&__input {
+		width: 100%;
+	}
+
+	// .poppup__buttons
+	&__buttons{
+		margin-top: 20px;
 		display: flex;
 		justify-content: end;
-		margin-bottom: 10px;
-		&:nth-child(1){
-			justify-content: start;
-		}
+		align-items: stretch;
+		flex-wrap: wrap;
+		gap: 10px;
+		width: 100%;
 	}
 
-	// .preview__inputname
-	&__inputname {
-	}
-
-	// .preview__input
-	&__input {
-	}
-
-	// .preview__btn
+	// .poppup__btn
 	&__btn {
-		padding: 5px 10px;
-		outline: none;
-		border-radius: 5px;
-		height: 100%;
-		background-color: #8f2c24;
-		border: none;
-		border: 1px solid transparent;
-		text-decoration: none;
-		&:hover{
-			border: 1px solid black;
-		}
-		&:active{
-			border: 1px solid black;
-			opacity: .5;
-		}
-		span{
-			color: #fff;
-		}
+		flex: 0 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 5px 7px;
+	}
+}
+
+
+
+.btn{
+	outline: none;
+	display: inline-flex;
+	border-radius: 5px;
+	background-color: #8f2c24;
+	border: none;
+	border: 1px solid transparent;
+	text-decoration: none;
+	&:hover{
+		border: 1px solid black;
+	}
+	&:active{
+		border: 1px solid black;
+		opacity: .5;
+	}
+	span{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
 	}
 }
