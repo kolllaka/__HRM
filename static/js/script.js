@@ -106,7 +106,12 @@ const jobber = new Jobber("jobber", {
 			study: "",
 			adress: "",
 			telephone: "+7(967)873-17-36",
-			wedlock: "men"
+			wedlock: "men",
+			passport: "",
+			family: "",
+			army: "",
+			languages: "",
+			study: ""
 		},
 		{
 			uid: "ac6405d4-e333-11ed-b5ea-0242ac120002",
@@ -119,7 +124,12 @@ const jobber = new Jobber("jobber", {
 			study: "",
 			adress: "",
 			telephone: "",
-			wedlock: "single"
+			wedlock: "single",
+			passport: "",
+			family: "",
+			army: "",
+			languages: "",
+			study: ""
 		},
 		{
 			uid: "b749e450-e333-11ed-b5ea-0242ac120002",
@@ -132,7 +142,12 @@ const jobber = new Jobber("jobber", {
 			study: "",
 			adress: "",
 			telephone: "",
-			wedlock: "women"
+			wedlock: "women",
+			passport: "",
+			family: "",
+			army: "",
+			languages: "",
+			study: ""
 		}
 	]
 })
