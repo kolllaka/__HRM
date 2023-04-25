@@ -103,7 +103,7 @@ const jobber = new Jobber("jobber", {
 			secondName: "Петров",
 			surname: "Петрович",
 			job: "грузчик",
-			birthday: "",
+			birthday: "1983-02-28",
 			placebirhday: "",
 			study: "",
 			adress: "",
@@ -219,7 +219,7 @@ const formateDate = () => {
 	let day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
 	let month = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
 
-	return `${day}.${month}.${date.getFullYear()}`
+	return `${date.getFullYear()}-${month}-${day}`
 }
 
 const getFullName = (jobber) => {
