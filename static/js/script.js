@@ -192,8 +192,24 @@ const fillReview = ($el, jobber = {}) => {
 			return
 		}
 
+		if (type == "dismissdate") {
+			const date = new Date();
+			previewInput.value = formateDate()
+
+			return
+		}
+
 		previewInput.value = jobber[type];
 	})
+}
+
+const formateDate = () => {
+	let date = new Date();
+	console.log(date.getMonth());
+	let day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+	let month = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+
+	return `${day}.${month}.${date.getFullYear()}`
 }
 
 const getFullName = (jobber) => {
