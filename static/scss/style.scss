@@ -170,7 +170,7 @@ h2{
 	min-width: 350px;
 	padding: 20px 40px;
 	margin-top: 30vh;
-	border: 1px solid #8f2c24;
+	border: 1px solid #660066;
 	border-radius: 6px;
 	display: flex;
 	flex-direction: column;
@@ -183,7 +183,7 @@ h2{
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 10px;
-		color: #8f2c24;
+		color: #660066;
 		text-shadow: -1px 0 rgb(183, 106, 106), 0 1px white, 1px 0 white, 0 -1px rgb(183, 106, 106);
 	}
 
@@ -203,13 +203,13 @@ h2{
 		border-radius: 5px;
 		background-color: #fff;
 		border: none;
-		color: #8f2c24;
+		color: #660066;
 		border: 1px solid transparent;
 		&:hover{
 			border: 1px solid black;
 		}
 		&:focus{
-			border: 1px solid #8f2c24;
+			border: 1px solid #660066;
 		}
 	}
 
@@ -221,7 +221,7 @@ h2{
 		padding: 5px 20px;
 		outline: none;
 		border-radius: 5px;
-		background-color: #8f2c24;
+		background-color: #660066;
 		border: none;
 		color: #fff;
 		letter-spacing: .3rem;
@@ -258,7 +258,7 @@ h2{
 	width: 100%;
 	background-color: rgba(136, 42, 42, 0.5);
 	backdrop-filter: blur(15px);
-	border-bottom: 1px dashed #8f2c24;
+	border-bottom: 1px dashed #660066;
 	// .header__body
 	&__body {
 		padding: 10px;
@@ -370,7 +370,8 @@ h2{
 			font-weight: bold;
 		}
 		&.active{
-			background-color: #8f2c24;
+			background-color: #660066;
+			color: #fff;
 		}
 	}
 
@@ -513,7 +514,7 @@ h2{
 	outline: none;
 	display: inline-flex;
 	border-radius: 5px;
-	background-color: #8f2c24;
+	background-color: #660066;
 	border: none;
 	border: 1px solid transparent;
 	text-decoration: none;
