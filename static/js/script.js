@@ -155,8 +155,8 @@ const jobber = new Jobber("jobber", {
 })
 
 document.addEventListener("click", (e) => {
-	e.preventDefault();
 	if (e.target.closest('.close')) {
+		e.preventDefault();
 		const poppup = e.target.closest(".poppup");
 		if (poppup) {
 			closePoppup(poppup);
@@ -164,6 +164,7 @@ document.addEventListener("click", (e) => {
 	}
 
 	if (e.target.classList.contains('poppupshowjobber') || e.target.classList.contains('poppuptransferjobber') || e.target.classList.contains('poppupdismissjobber')) {
+		e.preventDefault();
 		closePoppup(e.target);
 	}
 })
