@@ -437,6 +437,9 @@ h2 {
 .poppup__item label input {
   margin: 0;
 }
+.poppup__item label span {
+  white-space: nowrap;
+}
 .poppup__input {
   width: 100%;
 }
