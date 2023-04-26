@@ -326,6 +326,10 @@ h2 {
   justify-content: space-between;
   gap: 30px;
 }
+.search__btn {
+  padding: 5px 30px;
+}
+
 .list__search {
   margin: 0 auto 20px;
   display: flex;
@@ -458,6 +462,10 @@ h2 {
   justify-content: center;
   align-items: center;
   padding: 5px 7px;
+}
+.poppup__btn.notactive {
+  background-color: gray;
+  pointer-events: none;
 }
 
 .btn {

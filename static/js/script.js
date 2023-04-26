@@ -41,6 +41,9 @@ class Jobber {
 		const jober = this.options.jobber.filter(jober => jober.uid === uid)[0];
 
 		fillReview(preview, jober);
+		preview.querySelectorAll('.poppup__btn').forEach((btn) => {
+			removeNOActive(btn)
+		})
 		row.classList.add('active');
 	}
 
@@ -77,6 +80,13 @@ class Jobber {
 			document.querySelector('.poppupdismissjobber').classList.add('show');
 		}
 	}
+}
+
+const removeNOActive = ($el) => {
+	$el.classList.remove('notactive');
+}
+const addNOActive = ($el) => {
+	$el.classList.add('notactive');
 }
 
 const getJobberTemplate = (options = []) => {
@@ -161,11 +171,18 @@ document.addEventListener("click", (e) => {
 		if (poppup) {
 			closePoppup(poppup);
 		}
+
+		return
 	}
 
-	if (e.target.classList.contains('poppupshowjobber') || e.target.classList.contains('poppuptransferjobber') || e.target.classList.contains('poppupdismissjobber')) {
-		e.preventDefault();
-		closePoppup(e.target);
+	switch (true) {
+		case e.target.classList.contains('poppupshowjobber'):
+		case e.target.classList.contains('poppuptransferjobber'):
+		case e.target.classList.contains('poppupdismissjobber'):
+			e.preventDefault();
+			closePoppup(e.target);
+
+			break
 	}
 })
 

@@ -338,6 +338,7 @@ h2{
 
 	// .search__btn
 	&__btn {
+		padding: 5px 30px;
 	}
 }
 
@@ -499,6 +500,7 @@ h2{
 		flex-wrap: wrap;
 		gap: 10px;
 		width: 100%;
+		
 	}
 
 	// .poppup__btn
@@ -508,6 +510,10 @@ h2{
 		justify-content: center;
 		align-items: center;
 		padding: 5px 7px;
+		&.notactive{
+			background-color: gray;
+			pointer-events: none;
+	}
 	}
 }
 
