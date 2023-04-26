@@ -388,53 +388,73 @@ h2{
 }
 
 // Poppups 
-.poppupshowjobber {
-	display: none;
-	position: absolute;
-	inset: 0;
-	background-color: rgba(#fff, .5);
-	backdrop-filter: blur(2px);
 
-	// .poppup__body
-	.poppup__body {
-		padding: 20px 10px;
-		margin: 10vh auto 0;
-		max-width: 600px;
-		background-color: white;
-		border: 3px solid black;
+.poppups{
+	&__poppupshowjobber {
+		display: none;
+		position: absolute;
+		inset: 0;
+		background-color: rgba(#fff, .5);
+		backdrop-filter: blur(2px);
+
+		// .poppup__body
+		.poppup__body {
+			padding: 20px 10px;
+			margin: 10vh auto 0;
+			max-width: 600px;
+			background-color: white;
+			border: 3px solid black;
+		}
 	}
-}
 
-.poppuptransferjobber {
-	display: none;
-	position: absolute;
-	inset: 0;
-	background-color: rgba(#fff, .5);
-	backdrop-filter: blur(2px);
-	// .poppup__body
-	.poppup__body {
-		padding: 20px 10px;
-		margin: 10vh auto 0;
-		max-width: 600px;
-		background-color: white;
-		border: 3px solid black;
+	&__poppuptransferjobber {
+		display: none;
+		position: absolute;
+		inset: 0;
+		background-color: rgba(#fff, .5);
+		backdrop-filter: blur(2px);
+		// .poppup__body
+		.poppup__body {
+			padding: 20px 10px;
+			margin: 10vh auto 0;
+			max-width: 600px;
+			background-color: white;
+			border: 3px solid black;
+		}
 	}
-}
 
-.poppupdismissjobber{
-	display: none;
-	position: absolute;
-	inset: 0;
-	background-color: rgba(#fff, .5);
-	backdrop-filter: blur(2px);
+	&__poppupdismissjobber{
+		display: none;
+		position: absolute;
+		inset: 0;
+		background-color: rgba(#fff, .5);
+		backdrop-filter: blur(2px);
 
-	// .poppup__body
-	.poppup__body {
-		padding: 20px 10px;
-		margin: 10vh auto 0;
-		max-width: 600px;
-		background-color: white;
-		border: 3px solid black;
+		// .poppup__body
+		.poppup__body {
+			padding: 20px 10px;
+			margin: 10vh auto 0;
+			max-width: 600px;
+			background-color: white;
+			border: 3px solid black;
+		}
+	}
+
+	&__poppupaddjobber{
+		display: none;
+		position: absolute;
+		inset: 0;
+		background-color: rgba(#fff, .5);
+		backdrop-filter: blur(2px);
+
+		// .poppup__body
+		.poppup__body {
+			padding: 20px 10px;
+			margin: 10vh auto 0;
+			max-width: 600px;
+			background-color: white;
+			border: 3px solid black;
+		}
 	}
 }
 
@@ -511,10 +531,6 @@ h2{
 		justify-content: center;
 		align-items: center;
 		padding: 5px 7px;
-		&.notactive{
-			background-color: gray;
-			pointer-events: none;
-	}
 	}
 }
 
@@ -528,6 +544,10 @@ h2{
 	border: none;
 	border: 1px solid transparent;
 	text-decoration: none;
+	&.notactive{
+		background-color: gray;
+		pointer-events: none;
+	}
 	&:hover{
 		border: 1px solid black;
 	}

@@ -360,7 +360,7 @@ h2 {
   text-align: center;
 }
 
-.poppupshowjobber {
+.poppups__poppupshowjobber {
   display: none;
   position: absolute;
   inset: 0;
@@ -368,15 +368,14 @@ h2 {
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
 }
-.poppupshowjobber .poppup__body {
+.poppups__poppupshowjobber .poppup__body {
   padding: 20px 10px;
   margin: 10vh auto 0;
   max-width: 600px;
   background-color: white;
   border: 3px solid black;
 }
-
-.poppuptransferjobber {
+.poppups__poppuptransferjobber {
   display: none;
   position: absolute;
   inset: 0;
@@ -384,15 +383,14 @@ h2 {
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
 }
-.poppuptransferjobber .poppup__body {
+.poppups__poppuptransferjobber .poppup__body {
   padding: 20px 10px;
   margin: 10vh auto 0;
   max-width: 600px;
   background-color: white;
   border: 3px solid black;
 }
-
-.poppupdismissjobber {
+.poppups__poppupdismissjobber {
   display: none;
   position: absolute;
   inset: 0;
@@ -400,7 +398,22 @@ h2 {
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
 }
-.poppupdismissjobber .poppup__body {
+.poppups__poppupdismissjobber .poppup__body {
+  padding: 20px 10px;
+  margin: 10vh auto 0;
+  max-width: 600px;
+  background-color: white;
+  border: 3px solid black;
+}
+.poppups__poppupaddjobber {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+.poppups__poppupaddjobber .poppup__body {
   padding: 20px 10px;
   margin: 10vh auto 0;
   max-width: 600px;
@@ -464,10 +477,6 @@ h2 {
   align-items: center;
   padding: 5px 7px;
 }
-.poppup__btn.notactive {
-  background-color: gray;
-  pointer-events: none;
-}
 
 .btn {
   outline: none;
@@ -477,6 +486,10 @@ h2 {
   border: none;
   border: 1px solid transparent;
   text-decoration: none;
+}
+.btn.notactive {
+  background-color: gray;
+  pointer-events: none;
 }
 .btn:hover {
   border: 1px solid black;

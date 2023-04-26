@@ -20,6 +20,9 @@ class Jobber {
 
 		this.jobberHandler = this.jobberHandler.bind(this);
 		document.querySelector(".mainform__preview").querySelector(".poppup__buttons").addEventListener("click", this.jobberHandler)
+
+		this.headerHandler = this.headerHandler.bind(this);
+		document.querySelector(".header__row").addEventListener("click", this.headerHandler)
 	}
 
 	jobberListHandler($event) {
@@ -56,28 +59,39 @@ class Jobber {
 		if ($event.target.closest(".showjobber")) {
 			// console.log("showjobber");
 			const jober = this.options.jobber.filter(jober => jober.uid === this.uid)[0],
-				poppupshowjobber = document.querySelector(".poppupshowjobber");
+				poppupshowjobber = document.querySelector(".poppups__poppupshowjobber");
 			fillReview(poppupshowjobber, jober)
 
-			document.querySelector('.poppupshowjobber').classList.add('show');
+			document.querySelector('.poppups__poppupshowjobber').classList.add('show');
 		}
 
 		if ($event.target.closest(".transferjobber")) {
 			// console.log("transferjobber");
 			const jober = this.options.jobber.filter(jober => jober.uid === this.uid)[0],
-				transferjobber = document.querySelector(".poppuptransferjobber");
+				transferjobber = document.querySelector(".poppups__poppuptransferjobber");
 			fillReview(transferjobber, jober)
 
-			document.querySelector('.poppuptransferjobber').classList.add('show');
+			document.querySelector('.poppups__poppuptransferjobber').classList.add('show');
 		}
 
 		if ($event.target.closest(".dismissjobber")) {
 			// console.log("dismissjobber");
 			const jober = this.options.jobber.filter(jober => jober.uid === this.uid)[0],
-				dismissjobber = document.querySelector(".poppupdismissjobber");
+				dismissjobber = document.querySelector(".poppups__poppupdismissjobber");
 			fillReview(dismissjobber, jober)
 
-			document.querySelector('.poppupdismissjobber').classList.add('show');
+			document.querySelector('.poppups__poppupdismissjobber').classList.add('show');
+		}
+	}
+
+	headerHandler($event) {
+		if ($event.target.closest(".addjobber")) {
+			// console.log("addjobber");
+			const jober = this.options.jobber.filter(jober => jober.uid === this.uid)[0],
+				dismissjobber = document.querySelector(".poppups__poppupaddjobber");
+			fillReview(dismissjobber, jober)
+
+			document.querySelector('.poppups__poppupaddjobber').classList.add('show');
 		}
 	}
 }
@@ -176,9 +190,10 @@ document.addEventListener("click", (e) => {
 	}
 
 	switch (true) {
-		case e.target.classList.contains('poppupshowjobber'):
-		case e.target.classList.contains('poppuptransferjobber'):
-		case e.target.classList.contains('poppupdismissjobber'):
+		case e.target.classList.contains('poppups__poppupshowjobber'):
+		case e.target.classList.contains('poppups__poppuptransferjobber'):
+		case e.target.classList.contains('poppups__poppupdismissjobber'):
+		case e.target.classList.contains('poppups__poppupaddjobber'):
 			e.preventDefault();
 			closePoppup(e.target);
 
@@ -243,7 +258,6 @@ const getFullName = (jobber) => {
 
 	return ''
 }
-
 
 const closePoppup = ($el) => {
 	$el.classList.remove('show');
