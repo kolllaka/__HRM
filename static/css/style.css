@@ -327,7 +327,7 @@ h2 {
   gap: 30px;
 }
 .search__btn {
-  padding: 5px 30px;
+  padding: 4px 30px;
 }
 
 .list__search {
@@ -445,6 +445,7 @@ h2 {
   white-space: nowrap;
 }
 .poppup__input {
+  height: 30px;
   width: 100%;
 }
 .poppup__buttons {

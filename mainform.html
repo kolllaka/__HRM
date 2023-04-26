@@ -238,13 +238,18 @@
 				<label class="poppup__row">
 					<li class="poppup__item">Должность</li>
 					<li class="poppup__item">
-						<input class="poppup__input" data-type="job" type="text">
+						<select class="poppup__input" data-type="job" name="job">
+							<option value="1" selected>job 1</option>
+							<option value="2">job 2</option>
+							<option value="3">job 3</option>
+							<option value="4">job 4</option>
+						</select>
 					</li>
 				</label>
 				<label class="poppup__row">
 					<li class="poppup__item">Надбавка, тарифная ставка</li>
 					<li class="poppup__item">
-						<input class="poppup__input" data-type="surcharge" type="text">
+						<input class="poppup__input" type="number" min="0" step="10" data-type="surcharge" type="text">
 					</li>
 				</label>
 				<label class="poppup__row">
@@ -256,7 +261,10 @@
 				<label class="poppup__row">
 					<li class="poppup__item">Действие</li>
 					<li class="poppup__item">
-						<input class="poppup__input" data-type="action" type="text">
+						<select class="poppup__input" data-type="action" name="action">
+							<option value="1" selected>Повышение в должности</option>
+							<option value="2">job 2</option>
+						</select>
 					</li>
 				</label>
 				<label class="poppup__row">
