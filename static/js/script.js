@@ -274,16 +274,10 @@ const fillReview = ($el, jobber = {}) => {
 			case "dismissdate":
 			case "dateofcompletion":
 			case "date":
-				if (jobber[type]) {
-					previewInput.value = jobber[type];
-
-					return
-				}
-
 				const date = new Date();
 				previewInput.value = formateDate()
 
-				return;
+				break;
 			default:
 				previewInput.value = ""
 
