@@ -35,6 +35,145 @@
 				</div>
 			</div>
 		</header>
+
+		<section class="mainform">
+			<div class="container">
+
+				<!-- Список -->
+				<div class="mainform__content">
+					<div class="mainform__list list">
+
+						<!-- Поиск -->
+						<div class="list__search search">
+							<form class="search__body">
+								<select class="search__select" name="" id="">
+									<option value="subname" selected>фамилия</option>
+									<option value="name">имя</option>
+									<option value="secondname">отчество</option>
+									<option value="job">должность</option>
+								</select>
+								<input class="search__input" type="text">
+								<a href="#" class="search__btn btn" value="Поиск" type="submit"><span>Поиск</span></a>
+							</form>
+						</div>
+						<ul class="list__row-t">
+							<li class="list__item">№№</li>
+							<li class="list__item">Фамилия</li>
+							<li class="list__item">Имя</li>
+							<li class="list__item">Отчество</li>
+							<li class="list__item">Должность</li>
+						</ul>
+
+						<div id="dismissed">
+						</div>
+					</div>
+					<div class="mainform__preview poppup">
+						<div class="poppup__body">
+							<div class="poppup__title">Личные данные сотрудника</div>
+							<label class="poppup__row">
+								<li class="poppup__item">Фамилия</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="secondName" type="text">
+								</li>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Имя</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="name" type="text">
+								</li>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Отчество</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="surname" type="text">
+								</li>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Дата рождения</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="birthday" type="date">
+								</li>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Место рождения</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="placebirhday" type="text">
+								</li>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Адрес проживания</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="adress" type="text">
+								</li>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Паспортные данные</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="passport" type="text">
+								</li>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Сведения о браке</li>
+								<li class="poppup__item">
+									<label>
+										<input class="poppup__input" data-type="wedlock" type="radio" name="wedlock" value="men">
+										<span>Женат</span>
+									</label>
+									<label>
+										<input class="poppup__input" data-type="wedlock" type="radio" name="wedlock"
+											value="women">
+										<span>Замужем</span>
+									</label>
+									<label>
+										<input class="poppup__input" data-type="wedlock" type="radio" name="wedlock"
+											value="single">
+										<span>Не в браке</span>
+									</label>
+								</li>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Состав семьи</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="family" type="text">
+								</li>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Сведения о воинском учёте</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="army" type="text">
+								</li>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Знания языков</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="languages" type="text">
+								</li>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Образование</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="study" type="text">
+								</li>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Телефон</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="telephone" type="text">
+								</li>
+							</label>
+							<label class="poppup__row">
+								<li class="poppup__item">Дата увольнения</li>
+								<li class="poppup__item">
+									<input class="poppup__input" data-type="dismissdate" type="date">
+								</li>
+							</label>
+							<div class="poppup__buttons">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 	</div>
 </body>
 <script src="./static/js/script.js"></script>

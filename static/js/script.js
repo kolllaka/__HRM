@@ -120,64 +120,111 @@ const getJobberTemplate = (options = []) => {
 	return jobbersTemplate.join('')
 }
 
-const jobber = new Jobber("jobber", {
-	jobber: [
-		{
-			uid: "a7b6580c-e333-11ed-b5ea-0242ac120002",
-			name: "Пётр",
-			secondName: "Петров",
-			surname: "Петрович",
-			job: "грузчик",
-			birthday: "1983-02-28",
-			placebirhday: "",
-			study: "",
-			adress: "",
-			telephone: "+7(967)873-17-36",
-			wedlock: "men",
-			passport: "",
-			family: "",
-			army: "",
-			languages: "",
-			study: ""
-		},
-		{
-			uid: "ac6405d4-e333-11ed-b5ea-0242ac120002",
-			name: "Вадим",
-			secondName: "Радионович",
-			surname: "Ежак",
-			job: "грузчик",
-			birthday: "",
-			placebirhday: "",
-			study: "",
-			adress: "",
-			telephone: "",
-			wedlock: "single",
-			passport: "",
-			family: "",
-			army: "",
-			languages: "",
-			study: ""
-		},
-		{
-			uid: "b749e450-e333-11ed-b5ea-0242ac120002",
-			name: "Гига",
-			secondName: "Чад",
-			surname: "Ёбырев",
-			job: "модер",
-			birthday: "",
-			placebirhday: "",
-			study: "",
-			adress: "",
-			telephone: "",
-			wedlock: "women",
-			passport: "",
-			family: "",
-			army: "",
-			languages: "",
-			study: ""
-		}
-	]
-})
+if (document.getElementById("jobber")) {
+	const jobber = new Jobber("jobber", {
+		jobber: [
+			{
+				uid: "a7b6580c-e333-11ed-b5ea-0242ac120002",
+				name: "Пётр",
+				secondName: "Петров",
+				surname: "Петрович",
+				job: "грузчик",
+				birthday: "1983-02-28",
+				placebirhday: "",
+				study: "",
+				adress: "",
+				telephone: "+7(967)873-17-36",
+				wedlock: "men",
+				passport: "",
+				family: "",
+				army: "",
+				languages: "",
+				study: ""
+			},
+			{
+				uid: "ac6405d4-e333-11ed-b5ea-0242ac120002",
+				name: "Вадим",
+				secondName: "Радионович",
+				surname: "Ежак",
+				job: "грузчик",
+				birthday: "",
+				placebirhday: "",
+				study: "",
+				adress: "",
+				telephone: "",
+				wedlock: "single",
+				passport: "",
+				family: "",
+				army: "",
+				languages: "",
+				study: ""
+			},
+			{
+				uid: "b749e450-e333-11ed-b5ea-0242ac120002",
+				name: "Гига",
+				secondName: "Чад",
+				surname: "Ёбырев",
+				job: "модер",
+				birthday: "",
+				placebirhday: "",
+				study: "",
+				adress: "",
+				telephone: "",
+				wedlock: "women",
+				passport: "",
+				family: "",
+				army: "",
+				languages: "",
+				study: ""
+			}
+		]
+	})
+}
+
+if (document.getElementById("dismissed")) {
+	const dismissed = new Jobber("dismissed", {
+		jobber: [
+			{
+				uid: "447e6e48-e43f-11ed-b5ea-0242ac120002",
+				name: "Елена",
+				secondName: "Евадакина",
+				surname: "Викторовна",
+				job: "бухгалтер",
+				birthday: "1993-02-28",
+				placebirhday: "",
+				study: "",
+				adress: "",
+				telephone: "+7(937)873-12-36",
+				wedlock: "women",
+				passport: "",
+				family: "",
+				army: "",
+				languages: "",
+				study: "",
+				dismissdate: "2023-03-12"
+			},
+			{
+				uid: "484fdbc4-e43f-11ed-b5ea-0242ac120002",
+				name: "Влас",
+				secondName: "Радионович",
+				surname: "Ежак",
+				job: "грузчик",
+				birthday: "",
+				placebirhday: "",
+				study: "",
+				adress: "",
+				telephone: "",
+				wedlock: "single",
+				passport: "",
+				family: "",
+				army: "",
+				languages: "",
+				study: "",
+				dismissdate: "2022-12-12"
+			}
+		]
+	})
+}
 
 document.addEventListener("click", (e) => {
 	if (e.target.closest('.close')) {
@@ -217,20 +264,20 @@ const fillReview = ($el, jobber = {}) => {
 			case "fio":
 				previewInput.value = getFullName(jobber);
 
-				break;
+				return;
 			case "wedlock":
 				if (previewInput.value === jobber.wedlock) {
-					previewInput.checked = "checked"
+					previewInput.checked = true
 				}
 
-				break;
+				return;
 			case "dismissdate":
 			case "dateofcompletion":
 			case "date":
 				const date = new Date();
 				previewInput.value = formateDate()
 
-				break;
+				return;
 			default:
 				previewInput.value = ""
 
