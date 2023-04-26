@@ -178,29 +178,29 @@ const fillReview = ($el, jobber = {}) => {
 
 	$el.querySelectorAll(".poppup__input").forEach((previewInput) => {
 		const type = previewInput.dataset.type
-		if (!type) {
-			return
-		}
 
-		if (type == "fio") {
-			previewInput.value = getFullName(jobber);
+		switch (type) {
+			case "fio":
+				previewInput.value = getFullName(jobber);
 
-			return
-		}
+				break;
+			case "wedlock":
+				if (previewInput.value === jobber.wedlock) {
+					previewInput.checked = "checked"
+				}
 
-		if (type == "wedlock") {
-			if (previewInput.value === jobber.wedlock) {
-				previewInput.checked = "checked"
-			}
+				break;
+			case "dismissdate":
+			case "dateofcompletion":
+			case "date":
+				const date = new Date();
+				previewInput.value = formateDate()
 
-			return
-		}
+				break;
+			default:
+				previewInput.value = ""
 
-		if (type == "dismissdate" || type == "dateofcompletion" || type == "date") {
-			const date = new Date();
-			previewInput.value = formateDate()
-
-			return
+				break;
 		}
 
 		if (jobber[type]) {
@@ -208,8 +208,6 @@ const fillReview = ($el, jobber = {}) => {
 
 			return
 		}
-
-		previewInput.value = ""
 	})
 }
 
