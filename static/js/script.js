@@ -86,6 +86,7 @@ class Jobber {
 
 	headerHandler($event) {
 		if ($event.target.closest(".addjobber")) {
+			$event.preventDefault();
 			// console.log("addjobber");
 			const jober = this.options.jobber.filter(jober => jober.uid === this.uid)[0],
 				dismissjobber = document.querySelector(".poppups__poppupaddjobber");
@@ -195,6 +196,7 @@ document.addEventListener("click", (e) => {
 		case e.target.classList.contains('poppups__poppupdismissjobber'):
 		case e.target.classList.contains('poppups__poppupaddjobber'):
 			e.preventDefault();
+
 			closePoppup(e.target);
 
 			break
