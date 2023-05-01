@@ -8,10 +8,28 @@ class Jobber {
 		this.#setup()
 	}
 
+	add(newJobber) {
+		let findJobber = this.options.jobber.find(jober => jober.uid == newJobber.uid)
+		for (let key in findJobber) {
+			if (newJobber[key]) {
+				findJobber[key] = newJobber[key]
+			}
+		}
+
+		this.uid = newJobber.uid
+		this.#update()
+	}
+
 	#render() {
 		this.$el.classList.add("list__body");
 
 		this.$el.innerHTML = getJobberTemplate(this.options.jobber)
+	}
+
+	#update() {
+		this.$el.innerHTML = getJobberTemplate(this.options.jobber, this.uid)
+		const jober = this.options.jobber.find(jober => jober.uid === this.uid);
+		fillReview(preview, jober);
 	}
 
 	#setup() {
@@ -41,7 +59,7 @@ class Jobber {
 			})
 		}
 
-		const jober = this.options.jobber.filter(jober => jober.uid === this.uid)[0];
+		const jober = this.options.jobber.find(jober => jober.uid === this.uid);
 
 		fillReview(preview, jober);
 		preview.querySelectorAll('.poppup__btn').forEach((btn) => {
@@ -137,8 +155,13 @@ const addNOActive = ($el) => {
 	$el.classList.add('notactive');
 }
 
-const getJobberTemplate = (options = []) => {
+const getJobberTemplate = (options = [], uid) => {
 	let jobbersTemplate = options.map((option, index) => {
+		let active = ""
+		if (uid && option.uid == uid) {
+			active = "active"
+		}
+
 		let jobName = JOB.find((job) => (job.UID === option.job))
 		if (jobName) {
 			jobName = jobName.name
@@ -147,7 +170,7 @@ const getJobberTemplate = (options = []) => {
 		}
 
 		return `
-		<ul class="list__row" data-uid=${option.uid}>
+		<ul class="list__row ${active}" data-uid=${option.uid}>
 			<li class="list__item">${index + 1}</li>
 			<li class="list__item">${option.secondName}</li>
 			<li class="list__item">${option.name}</li>

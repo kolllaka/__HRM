@@ -1,23 +1,25 @@
 // JOBBER
+let activeJobber
 if (document.getElementById("jobber")) {
 	const url = "./static/db/jobber.json"
 	fetch(url).then((resp) => {
 		resp.json().then((json) => {
 			return json
 		}).then((JOBBER) => {
-			const jobber = new Jobber("jobber", JOBBER)
+			activeJobber = new Jobber("jobber", JOBBER)
 		})
 	})
 }
 
 // DISMISSED
+let dismissedJobber
 if (document.getElementById("dismissed")) {
 	const url = "./static/db/dismissed.json"
 	fetch(url).then((resp) => {
 		resp.json().then((json) => {
 			return json
 		}).then((DISMISSED) => {
-			const jobber = new Jobber("dismissed", DISMISSED)
+			dismissedJobber = new Jobber("dismissed", DISMISSED)
 		})
 	})
 }
@@ -47,9 +49,16 @@ document.addEventListener("click", (e) => {
 	if (e.target.closest(".save")) {
 		e.preventDefault();
 		const poppup = e.target.closest(".poppup"),
-			inputValues = poppup.querySelectorAll(".poppup__input");
+			inputValues = poppup.querySelectorAll(".poppup__input"),
+			uid = poppup.querySelector(".poppup__title").dataset.uid;
+
+		console.log(uid);
 
 		let jobber = {}
+		if (uid && uid != "undefined") {
+			jobber["uid"] = uid
+		}
+
 		if (inputValues) {
 			inputValues.forEach(inputValue => {
 				let type = inputValue.dataset.type
@@ -68,6 +77,9 @@ document.addEventListener("click", (e) => {
 
 		sendJobber(jobber)
 
+		if (poppup) {
+			closePoppup(poppup);
+		}
 		//alert("заполните все поля")
 	}
 
@@ -85,8 +97,14 @@ document.addEventListener("click", (e) => {
 	}
 })
 
+// ? db
 const sendJobber = (jobber) => {
 	console.log(jobber);
+	if (!jobber.uid) {
+		jobber.uid = "12321312312321312312"
+	}
+
+	activeJobber.add(jobber)
 }
 
 let listBody = document.querySelector(".list__body"),
