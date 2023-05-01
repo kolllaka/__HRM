@@ -1,66 +1,26 @@
+// JOBBER
 if (document.getElementById("jobber")) {
-	//JOBBER
 	const url = "./static/db/jobber.json"
 	fetch(url).then((resp) => {
 		resp.json().then((json) => {
-			console.log("[json] ", json);
-			let JOBBER = json
-
-			return JOBBER
+			return json
 		}).then((JOBBER) => {
-			console.log("jobber", JOBBER)
 			const jobber = new Jobber("jobber", JOBBER)
-		}
-			//const jobber = new Jobber("jobber", JOBBER)
-		)
+		})
 	})
 }
 
+// DISMISSED
 if (document.getElementById("dismissed")) {
-	const dismissed = new Jobber("dismissed", {
-		jobber: [
-			{
-				uid: "447e6e48-e43f-11ed-b5ea-0242ac120002",
-				name: "Елена",
-				secondName: "Евадакина",
-				surname: "Викторовна",
-				job: 2,
-				birthday: "1993-02-28",
-				placebirhday: "",
-				study: "",
-				adress: "",
-				telephone: "+7(937)873-12-36",
-				wedlock: "women",
-				passport: "",
-				family: "",
-				army: "",
-				languages: "",
-				study: "",
-				dismissdate: "2023-03-12"
-			},
-			{
-				uid: "484fdbc4-e43f-11ed-b5ea-0242ac120002",
-				name: "Влас",
-				secondName: "Радионович",
-				surname: "Ежак",
-				job: 1,
-				birthday: "",
-				placebirhday: "",
-				study: "",
-				adress: "",
-				telephone: "",
-				wedlock: "single",
-				passport: "",
-				family: "",
-				army: 1,
-				languages: "",
-				study: "",
-				dismissdate: "2022-12-12"
-			}
-		]
+	const url = "./static/db/dismissed.json"
+	fetch(url).then((resp) => {
+		resp.json().then((json) => {
+			return json
+		}).then((DISMISSED) => {
+			const jobber = new Jobber("dismissed", DISMISSED)
+		})
 	})
 }
-
 
 document.addEventListener("click", (e) => {
 	if (e.target.closest('.close')) {

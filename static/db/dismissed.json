@@ -1,0 +1,40 @@
+{
+	"jobber": [
+		{
+			"uid": "447e6e48-e43f-11ed-b5ea-0242ac120002",
+			"name": "Елена",
+			"secondName": "Евадакина",
+			"surname": "Викторовна",
+			"job": 2,
+			"birthday": "1993-02-28",
+			"placebirhday": "",
+			"study": "",
+			"adress": "",
+			"telephone": "+7(937)873-12-36",
+			"wedlock": "women",
+			"passport": "",
+			"family": "",
+			"army": "",
+			"languages": "",
+			"dismissdate": "2023-03-12"
+		},
+		{
+			"uid": "484fdbc4-e43f-11ed-b5ea-0242ac120002",
+			"name": "Влас",
+			"secondName": "Радионович",
+			"surname": "Ежак",
+			"job": 1,
+			"birthday": "",
+			"placebirhday": "",
+			"study": "",
+			"adress": "",
+			"telephone": "",
+			"wedlock": "single",
+			"passport": "",
+			"family": "",
+			"army": 1,
+			"languages": "",
+			"dismissdate": "2022-12-12"
+		}
+	]
+}
