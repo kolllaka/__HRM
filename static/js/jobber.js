@@ -98,7 +98,7 @@ class Jobber {
 				addNOActive(saveBtn)
 			}
 
-			input.addEventListener('input', inputHandler = (e) => {
+			input.addEventListener('input', (e) => {
 				if (input.value != "") {
 					inputValues[type] = true
 				} else {
@@ -114,6 +114,7 @@ class Jobber {
 				}
 			})
 		})
+		// !
 	}
 }
 

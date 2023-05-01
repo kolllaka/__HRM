@@ -54,12 +54,11 @@ document.addEventListener("click", (e) => {
 			inputValues.forEach(inputValue => {
 				let type = inputValue.dataset.type
 
-				console.log(inputValue.value);
 				jobber[type] = inputValue.value
 			})
 		}
-		console.log(jobber);
 
+		sendJobber(jobber)
 
 		//alert("заполните все поля")
 	}
@@ -77,6 +76,10 @@ document.addEventListener("click", (e) => {
 			break
 	}
 })
+
+const sendJobber = (jobber) => {
+	console.log(jobber);
+}
 
 let listBody = document.querySelector(".list__body"),
 	listRows = document.querySelectorAll(".list__row"),
