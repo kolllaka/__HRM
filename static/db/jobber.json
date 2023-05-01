@@ -7,15 +7,15 @@
 			"surname": "Петрович",
 			"job": 1,
 			"birthday": "1983-02-28",
-			"placebirhday": "",
-			"study": "",
-			"adress": "",
+			"placebirhday": "123",
+			"study": "123",
+			"adress": "123",
 			"telephone": "+7(967)873-17-36",
 			"wedlock": "men",
-			"passport": "",
-			"family": "",
-			"army": "",
-			"languages": ""
+			"passport": "123",
+			"family": "123",
+			"army": "123",
+			"languages": "123"
 		},
 		{
 			"uid": "ac6405d4-e333-11ed-b5ea-0242ac120002",

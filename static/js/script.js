@@ -54,6 +54,14 @@ document.addEventListener("click", (e) => {
 			inputValues.forEach(inputValue => {
 				let type = inputValue.dataset.type
 
+				if (type == "wedlock") {
+					if (inputValue.checked) {
+						jobber[type] = inputValue.value
+					}
+
+					return
+				}
+
 				jobber[type] = inputValue.value
 			})
 		}
