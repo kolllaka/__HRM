@@ -88,6 +88,32 @@ class Jobber {
 		fillReview(poppup, jober)
 
 		poppup.classList.add('show');
+
+		// ! remove from here
+		let inputValues = {}
+		poppup.querySelectorAll('.poppup__input').forEach(input => {
+			let type = input.dataset.type
+			if (input.value == "") {
+				inputValues[type] = false
+				addNOActive(saveBtn)
+			}
+
+			input.addEventListener('input', inputHandler = (e) => {
+				if (input.value != "") {
+					inputValues[type] = true
+				} else {
+					inputValues[type] = false
+				}
+
+				if (saveBtn) {
+					if (showBtn(inputValues)) {
+						removeNOActive(saveBtn)
+					} else {
+						addNOActive(saveBtn)
+					}
+				}
+			})
+		})
 	}
 }
 
