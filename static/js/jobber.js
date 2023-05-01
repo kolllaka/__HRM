@@ -23,6 +23,9 @@ class Jobber {
 
 		this.uid = newJobber.uid
 		this.#update()
+		preview.querySelectorAll('.poppup__btn').forEach((btn) => {
+			removeNOActive(btn)
+		})
 	}
 
 	#render() {
