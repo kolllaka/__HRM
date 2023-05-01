@@ -57,44 +57,48 @@ class Jobber {
 		}
 
 		if ($event.target.closest(".showjobber")) {
-			// console.log("showjobber");
-			const jober = this.options.jobber.filter(jober => jober.uid === this.uid)[0],
-				poppupshowjobber = document.querySelector(".poppups__poppupshowjobber");
-			fillReview(poppupshowjobber, jober)
-
-			document.querySelector('.poppups__poppupshowjobber').classList.add('show');
+			this.#showPoppup("showjobber", this.uid)
 		}
 
 		if ($event.target.closest(".transferjobber")) {
-			// console.log("transferjobber");
-			const jober = this.options.jobber.filter(jober => jober.uid === this.uid)[0],
-				transferjobber = document.querySelector(".poppups__poppuptransferjobber");
-			fillReview(transferjobber, jober)
-
-			document.querySelector('.poppups__poppuptransferjobber').classList.add('show');
+			this.#showPoppup("transferjobber", this.uid)
 		}
 
 		if ($event.target.closest(".dismissjobber")) {
-			// console.log("dismissjobber");
-			const jober = this.options.jobber.filter(jober => jober.uid === this.uid)[0],
-				dismissjobber = document.querySelector(".poppups__poppupdismissjobber");
-			fillReview(dismissjobber, jober)
-
-			document.querySelector('.poppups__poppupdismissjobber').classList.add('show');
+			this.#showPoppup("dismissjobber", this.uid)
 		}
 	}
 
 	headerHandler($event) {
 		if ($event.target.closest(".addjobber")) {
 			$event.preventDefault();
-			// console.log("addjobber");
-			const jober = this.options.jobber.filter(jober => jober.uid === this.uid)[0],
-				dismissjobber = document.querySelector(".poppups__poppupaddjobber");
-			fillReview(dismissjobber, jober)
-
-			document.querySelector('.poppups__poppupaddjobber').classList.add('show');
+			this.#showPoppup("addjobber")
 		}
 	}
+
+	#showPoppup($el, uid) {
+		// console.log($el);
+		const poppup = document.querySelector(`.poppups__poppup${$el}`),
+			saveBtn = poppup.querySelector('.save');
+
+		let jober = {}
+		if (uid) {
+			jober = this.options.jobber.filter(jober => jober.uid === uid)[0];
+		}
+		fillReview(poppup, jober)
+
+		poppup.classList.add('show');
+	}
+}
+
+const showBtn = (inputValues = {}) => {
+	for (let key in inputValues) {
+		if (!inputValues[key]) {
+			return false
+		}
+	}
+
+	return true
 }
 
 const removeNOActive = ($el) => {

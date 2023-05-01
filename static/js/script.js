@@ -22,6 +22,17 @@ if (document.getElementById("dismissed")) {
 	})
 }
 
+if (document.querySelector('.poppup.show')) {
+	document.querySelector('.poppup.show').querySelectorAll('input').forEach(input => {
+		input.addEventListener('change', (e) => {
+			document.querySelector('.poppup.show').querySelector('save').classList.add('notactive');
+			removeNOActive(document.querySelector('.poppup.show').querySelector('save'));
+			console.log(e);
+		})
+	})
+}
+
+
 document.addEventListener("click", (e) => {
 	if (e.target.closest('.close')) {
 		e.preventDefault();
@@ -32,6 +43,27 @@ document.addEventListener("click", (e) => {
 
 		return
 	}
+
+	if (e.target.closest(".save")) {
+		e.preventDefault();
+		const poppup = e.target.closest(".poppup"),
+			inputValues = poppup.querySelectorAll(".poppup__input");
+
+		let jobber = {}
+		if (inputValues) {
+			inputValues.forEach(inputValue => {
+				let type = inputValue.dataset.type
+
+				console.log(inputValue.value);
+				jobber[type] = inputValue.value
+			})
+		}
+		console.log(jobber);
+
+
+		//alert("заполните все поля")
+	}
+
 
 	switch (true) {
 		case e.target.classList.contains('poppups__poppupshowjobber'):
