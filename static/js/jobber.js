@@ -95,7 +95,9 @@ class Jobber {
 			let type = input.dataset.type
 			if (input.value == "") {
 				inputValues[type] = false
-				addNOActive(saveBtn)
+				if (saveBtn) {
+					addNOActive(saveBtn)
+				}
 			}
 
 			input.addEventListener('input', (e) => {
