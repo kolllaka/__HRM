@@ -10,11 +10,16 @@ class Jobber {
 
 	add(newJobber) {
 		let findJobber = this.options.jobber.find(jober => jober.uid == newJobber.uid)
-		for (let key in findJobber) {
-			if (newJobber[key]) {
-				findJobber[key] = newJobber[key]
+		if (findJobber) {
+			for (let key in findJobber) {
+				if (newJobber[key]) {
+					findJobber[key] = newJobber[key]
+				}
 			}
+		} else {
+			this.options.jobber.push(newJobber)
 		}
+
 
 		this.uid = newJobber.uid
 		this.#update()
