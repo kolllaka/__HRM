@@ -73,43 +73,43 @@
 							<label class="poppup__row">
 								<li class="poppup__item">Фамилия</li>
 								<li class="poppup__item">
-									<input class="poppup__input" data-type="secondName" type="text" readonly>
+									<input class="poppup__input" data-type="secondName" type="text" disabled>
 								</li>
 							</label>
 							<label class="poppup__row">
 								<li class="poppup__item">Имя</li>
 								<li class="poppup__item">
-									<input class="poppup__input" data-type="name" type="text" readonly>
+									<input class="poppup__input" data-type="name" type="text" disabled>
 								</li>
 							</label>
 							<label class="poppup__row">
 								<li class="poppup__item">Отчество</li>
 								<li class="poppup__item">
-									<input class="poppup__input" data-type="surname" type="text" readonly>
+									<input class="poppup__input" data-type="surname" type="text" disabled>
 								</li>
 							</label>
 							<label class="poppup__row">
 								<li class="poppup__item">Дата рождения</li>
 								<li class="poppup__item">
-									<input class="poppup__input" data-type="birthday" type="date" readonly>
+									<input class="poppup__input" data-type="birthday" type="date" disabled>
 								</li>
 							</label>
 							<label class="poppup__row">
 								<li class="poppup__item">Место рождения</li>
 								<li class="poppup__item">
-									<input class="poppup__input" data-type="placebirhday" type="text" readonly>
+									<input class="poppup__input" data-type="placebirhday" type="text" disabled>
 								</li>
 							</label>
 							<label class="poppup__row">
 								<li class="poppup__item">Адрес проживания</li>
 								<li class="poppup__item">
-									<input class="poppup__input" data-type="adress" type="text" readonly>
+									<input class="poppup__input" data-type="adress" type="text" disabled>
 								</li>
 							</label>
 							<label class="poppup__row">
 								<li class="poppup__item">Паспортные данные</li>
 								<li class="poppup__item">
-									<input class="poppup__input" data-type="passport" type="text" readonly>
+									<input class="poppup__input" data-type="passport" type="text" disabled>
 								</li>
 							</label>
 							<div class="poppup__row" style="pointer-events: none;">
@@ -134,37 +134,38 @@
 							<label class="poppup__row">
 								<li class="poppup__item">Состав семьи</li>
 								<li class="poppup__item">
-									<input class="poppup__input" data-type="family" type="text" readonly>
+									<input class="poppup__input" data-type="family" type="text" disabled>
 								</li>
 							</label>
 							<label class="poppup__row">
 								<li class="poppup__item">Сведения о воинском учёте</li>
 								<li class="poppup__item">
-									<input class="poppup__input" data-type="army" type="text" readonly>
+									<select class="poppup__input" data-type="army" type="text" disabled>
+									</select>
 								</li>
 							</label>
 							<label class="poppup__row">
 								<li class="poppup__item">Знания языков</li>
 								<li class="poppup__item">
-									<input class="poppup__input" data-type="languages" type="text" readonly>
+									<input class="poppup__input" data-type="languages" type="text" disabled>
 								</li>
 							</label>
 							<label class="poppup__row">
 								<li class="poppup__item">Образование</li>
 								<li class="poppup__item">
-									<input class="poppup__input" data-type="study" type="text" readonly>
+									<input class="poppup__input" data-type="study" type="text" disabled>
 								</li>
 							</label>
 							<label class="poppup__row">
 								<li class="poppup__item">Телефон</li>
 								<li class="poppup__item">
-									<input class="poppup__input" data-type="telephone" type="text" readonly>
+									<input class="poppup__input" data-type="telephone" type="text" disabled>
 								</li>
 							</label>
 							<label class="poppup__row">
 								<li class="poppup__item">Дата увольнения</li>
 								<li class="poppup__item">
-									<input class="poppup__input" data-type="dismissdate" type="date" readonly>
+									<input class="poppup__input" data-type="dismissdate" type="date" disabled>
 								</li>
 							</label>
 							<div class="poppup__buttons">
@@ -177,6 +178,20 @@
 	</div>
 </body>
 
+<script>
+	const JOB = [{
+		UID: 1, name: "грузчик"
+	}, {
+		UID: 2, name: "бухгалтер"
+	}, {
+		UID: 3, name: "модер"
+	}]
+
+	const ARMY = [{ UID: 1, name: "служил" }, { UID: 2, name: "не служил" }]
+
+	const ACTION = [{ UID: 1, name: "Повышение в должности" }, { UID: 2, name: "Увольнение" }]
+
+</script>
 <script src="./static/js/jobber.js"></script>
 <script src="./static/js/script.js"></script>
 

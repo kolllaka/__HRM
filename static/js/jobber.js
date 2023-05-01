@@ -27,9 +27,9 @@ class Jobber {
 
 	jobberListHandler($event) {
 		$event.preventDefault();
-		const row = $event.target.closest(".list__row"),
-			uid = row.dataset.uid;
-		this.uid = uid;
+		const listRows = document.querySelectorAll(".list__row"),
+			row = $event.target.closest(".list__row");
+		this.uid = row.dataset.uid;
 
 		if (row.classList.contains("active")) {
 			return
@@ -41,7 +41,7 @@ class Jobber {
 			})
 		}
 
-		const jober = this.options.jobber.filter(jober => jober.uid === uid)[0];
+		const jober = this.options.jobber.filter(jober => jober.uid === this.uid)[0];
 
 		fillReview(preview, jober);
 		preview.querySelectorAll('.poppup__btn').forEach((btn) => {
@@ -106,13 +106,20 @@ const addNOActive = ($el) => {
 
 const getJobberTemplate = (options = []) => {
 	let jobbersTemplate = options.map((option, index) => {
+		let jobName = JOB.find((job) => (job.UID === option.job))
+		if (jobName) {
+			jobName = jobName.name
+		} else {
+			jobName = ""
+		}
+
 		return `
 		<ul class="list__row" data-uid=${option.uid}>
 			<li class="list__item">${index + 1}</li>
 			<li class="list__item">${option.secondName}</li>
 			<li class="list__item">${option.name}</li>
 			<li class="list__item">${option.surname}</li>
-			<li class="list__item">${option.job}</li>
+			<li class="list__item">${jobName}</li>
 		</ul>
 		`
 	})

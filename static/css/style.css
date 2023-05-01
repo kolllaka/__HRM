@@ -459,6 +459,15 @@ h2 {
 .poppup__input {
   height: 30px;
   width: 100%;
+  background-color: #fff;
+}
+.poppup__input:-moz-read-only {
+  color: rgb(24, 24, 24);
+  border: 1px solid rgb(24, 24, 24);
+}
+.poppup__input:disabled, .poppup__input:read-only {
+  color: rgb(24, 24, 24);
+  border: 1px solid rgb(24, 24, 24);
 }
 .poppup__buttons {
   margin-top: 20px;

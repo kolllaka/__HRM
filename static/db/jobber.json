@@ -1,0 +1,55 @@
+{
+	"jobber": [
+		{
+			"uid": "a7b6580c-e333-11ed-b5ea-0242ac120002",
+			"name": "Пётр",
+			"secondName": "Петров",
+			"surname": "Петрович",
+			"job": 1,
+			"birthday": "1983-02-28",
+			"placebirhday": "",
+			"study": "",
+			"adress": "",
+			"telephone": "+7(967)873-17-36",
+			"wedlock": "men",
+			"passport": "",
+			"family": "",
+			"army": "",
+			"languages": ""
+		},
+		{
+			"uid": "ac6405d4-e333-11ed-b5ea-0242ac120002",
+			"name": "Вадим",
+			"secondName": "Радионович",
+			"surname": "Ежак",
+			"job": 1,
+			"birthday": "",
+			"placebirhday": "",
+			"study": "",
+			"adress": "",
+			"telephone": "",
+			"wedlock": "single",
+			"passport": "",
+			"family": "",
+			"army": "",
+			"languages": ""
+		},
+		{
+			"uid": "b749e450-e333-11ed-b5ea-0242ac120002",
+			"name": "Гига",
+			"secondName": "Чад",
+			"surname": "Ёбырев",
+			"job": 3,
+			"birthday": "",
+			"placebirhday": "",
+			"study": "",
+			"adress": "",
+			"telephone": "",
+			"wedlock": "women",
+			"passport": "",
+			"family": "",
+			"army": "",
+			"languages": ""
+		}
+	]
+}

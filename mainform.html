@@ -81,7 +81,7 @@
 							<label class="poppup__row">
 								<li class="poppup__item">Должность</li>
 								<li class="poppup__item">
-									<input class="poppup__input" data-type="job" type="text" readonly>
+									<input class="poppup__input" data-type="job" type="text" readonly></input>
 								</li>
 							</label>
 							<label class="poppup__row">
@@ -245,10 +245,6 @@
 						<li class="poppup__item">Должность</li>
 						<li class="poppup__item">
 							<select class="poppup__input" data-type="job" name="job">
-								<option value="1" selected>job 1</option>
-								<option value="2">job 2</option>
-								<option value="3">job 3</option>
-								<option value="4">job 4</option>
 							</select>
 						</li>
 					</label>
@@ -268,8 +264,6 @@
 						<li class="poppup__item">Действие</li>
 						<li class="poppup__item">
 							<select class="poppup__input" data-type="action" name="action">
-								<option value="1" selected>Повышение в должности</option>
-								<option value="2">job 2</option>
 							</select>
 						</li>
 					</label>
@@ -497,6 +491,21 @@
 	</div>
 </body>
 
+
+<script>
+	const JOB = [{
+		UID: 1, name: "грузчик"
+	}, {
+		UID: 2, name: "бухгалтер"
+	}, {
+		UID: 3, name: "модер"
+	}]
+
+	const ARMY = [{ UID: 1, name: "служил" }, { UID: 2, name: "не служил" }]
+
+	const ACTION = [{ UID: 1, name: "Повышение в должности" }, { UID: 2, name: "Увольнение" }]
+
+</script>
 <script src="./static/js/jobber.js"></script>
 <script src="./static/js/script.js"></script>
 

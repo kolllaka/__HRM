@@ -1,61 +1,18 @@
 if (document.getElementById("jobber")) {
-	const jobber = new Jobber("jobber", {
-		jobber: [
-			{
-				uid: "a7b6580c-e333-11ed-b5ea-0242ac120002",
-				name: "Пётр",
-				secondName: "Петров",
-				surname: "Петрович",
-				job: "грузчик",
-				birthday: "1983-02-28",
-				placebirhday: "",
-				study: "",
-				adress: "",
-				telephone: "+7(967)873-17-36",
-				wedlock: "men",
-				passport: "",
-				family: "",
-				army: "",
-				languages: "",
-				study: ""
-			},
-			{
-				uid: "ac6405d4-e333-11ed-b5ea-0242ac120002",
-				name: "Вадим",
-				secondName: "Радионович",
-				surname: "Ежак",
-				job: "грузчик",
-				birthday: "",
-				placebirhday: "",
-				study: "",
-				adress: "",
-				telephone: "",
-				wedlock: "single",
-				passport: "",
-				family: "",
-				army: "",
-				languages: "",
-				study: ""
-			},
-			{
-				uid: "b749e450-e333-11ed-b5ea-0242ac120002",
-				name: "Гига",
-				secondName: "Чад",
-				surname: "Ёбырев",
-				job: "модер",
-				birthday: "",
-				placebirhday: "",
-				study: "",
-				adress: "",
-				telephone: "",
-				wedlock: "women",
-				passport: "",
-				family: "",
-				army: "",
-				languages: "",
-				study: ""
-			}
-		]
+	//JOBBER
+	const url = "./static/db/jobber.json"
+	fetch(url).then((resp) => {
+		resp.json().then((json) => {
+			console.log("[json] ", json);
+			let JOBBER = json
+
+			return JOBBER
+		}).then((JOBBER) => {
+			console.log("jobber", JOBBER)
+			const jobber = new Jobber("jobber", JOBBER)
+		}
+			//const jobber = new Jobber("jobber", JOBBER)
+		)
 	})
 }
 
@@ -67,7 +24,7 @@ if (document.getElementById("dismissed")) {
 				name: "Елена",
 				secondName: "Евадакина",
 				surname: "Викторовна",
-				job: "бухгалтер",
+				job: 2,
 				birthday: "1993-02-28",
 				placebirhday: "",
 				study: "",
@@ -86,7 +43,7 @@ if (document.getElementById("dismissed")) {
 				name: "Влас",
 				secondName: "Радионович",
 				surname: "Ежак",
-				job: "грузчик",
+				job: 1,
 				birthday: "",
 				placebirhday: "",
 				study: "",
@@ -95,7 +52,7 @@ if (document.getElementById("dismissed")) {
 				wedlock: "single",
 				passport: "",
 				family: "",
-				army: "",
+				army: 1,
 				languages: "",
 				study: "",
 				dismissdate: "2022-12-12"
@@ -103,6 +60,7 @@ if (document.getElementById("dismissed")) {
 		]
 	})
 }
+
 
 document.addEventListener("click", (e) => {
 	if (e.target.closest('.close')) {
@@ -138,6 +96,14 @@ const fillReview = ($el, jobber = {}) => {
 	$el.querySelectorAll(".poppup__input").forEach((previewInput) => {
 		const type = previewInput.dataset.type
 
+		if (previewInput.tagName == "SELECT") {
+			if (jobber[type]) {
+				previewInput.value = jobber[type]
+			}
+
+			return;
+		}
+
 		switch (type) {
 			case "fio":
 				previewInput.value = getFullName(jobber);
@@ -147,6 +113,18 @@ const fillReview = ($el, jobber = {}) => {
 				if (previewInput.value === jobber.wedlock) {
 					previewInput.checked = true
 				}
+
+				return;
+			case "job":
+				//previewInput.value = jobber[type];
+				jobName = JOB.find((job) => (job.UID === jobber[type]))
+				if (jobName) {
+					previewInput.value = jobName.name
+
+					return
+				}
+
+				previewInput.value = ""
 
 				return;
 			case "dismissdate":
@@ -207,4 +185,41 @@ radioChangers.forEach((radioChanger) => {
 
 		radios[checkedIndex].checked = true;
 	})
-}) 
+})
+
+class CustomSelect {
+	constructor($el, type, options) {
+		this.$el = document.querySelectorAll(`${$el}[data-type=${type}]`);
+		this.type = type;
+		this.options = this.#optionTemplate(options.option);
+
+		this.#render();
+	}
+
+	#render() {
+		this.$el.forEach((element) => {
+			element.innerHTML = this.options
+		});
+
+	}
+
+	#optionTemplate(options = []) {
+		return `<option selected disabled value="0" style="display: none;"></option>` + options.map((option, index) => {
+			return `
+			<option value="${option.UID}">${option.name}</option>
+			`
+		}).join("")
+	}
+}
+
+const selectsArmy = new CustomSelect("select.poppup__input", "army", {
+	option: ARMY
+})
+
+const selectsAction = new CustomSelect("select.poppup__input", "action", {
+	option: ACTION
+})
+
+let selectsJob = new CustomSelect("select.poppup__input", "job", {
+	option: JOB
+})

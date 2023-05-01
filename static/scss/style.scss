@@ -510,6 +510,12 @@ h2{
 	&__input {
 		height: 30px;
 		width: 100%;
+		background-color: #fff;
+		&:disabled,
+		&:read-only{
+			color: rgb(24, 24, 24);
+			border: 1px solid rgb(24, 24, 24);
+		}
 	}
 
 	// .poppup__buttons
