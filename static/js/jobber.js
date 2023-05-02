@@ -3,7 +3,7 @@ class Jobber {
 		this.$el = document.getElementById(selector);
 		this.options = options
 
-		this.uid
+		this.uid = ""
 		this.#render()
 		this.#setup()
 	}
@@ -25,6 +25,13 @@ class Jobber {
 		preview.querySelectorAll('.poppup__btn').forEach((btn) => {
 			removeNOActive(btn)
 		})
+	}
+
+	delete(newJobber) {
+		this.options.jobber = this.options.jobber.filter(jober => jober.uid != newJobber.uid)
+
+		this.uid = ""
+		this.#update()
 	}
 
 	#render() {

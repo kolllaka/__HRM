@@ -123,6 +123,44 @@ document.addEventListener("click", (e) => {
 		return
 	}
 
+	if (e.target.closest(".dismiss")) {
+		const poppup = e.target.closest(".poppup"),
+			inputValues = poppup.querySelectorAll(".poppup__input"),
+			uid = poppup.querySelector(".poppup__title").dataset.uid;
+
+		console.log(uid);
+
+		let jobber = {}
+		if (uid && uid != "undefined") {
+			jobber["uid"] = uid
+		}
+
+		if (inputValues) {
+			inputValues.forEach(inputValue => {
+				let type = inputValue.dataset.type
+
+				if (type == "wedlock") {
+					if (inputValue.checked) {
+						jobber[type] = inputValue.value
+					}
+
+					return
+				}
+
+				jobber[type] = inputValue.value
+			})
+
+			dismissJobber(jobber)
+
+			if (poppup) {
+				closePoppup(poppup);
+			}
+			//alert("заполните все поля")
+		}
+
+		return
+	}
+
 	switch (true) {
 		case e.target.classList.contains('poppups__poppupshowjobber'):
 		case e.target.classList.contains('poppups__poppuptransferjobber'):
@@ -154,6 +192,18 @@ const transferJobber = (jobber) => {
 	}
 
 	activeJobber.add(jobber)
+}
+
+const dismissJobber = (jobber) => {
+	console.log(jobber);
+	if (!jobber.uid) {
+		console.log('miss uid');
+
+		return
+	}
+
+	// ! отправка на сервер
+	activeJobber.delete(jobber)
 }
 
 let listBody = document.querySelector(".list__body"),
