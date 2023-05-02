@@ -81,8 +81,47 @@ document.addEventListener("click", (e) => {
 			closePoppup(poppup);
 		}
 		//alert("заполните все поля")
+
+		return
 	}
 
+	if (e.target.closest(".transfer")) {
+		const poppup = e.target.closest(".poppup"),
+			inputValues = poppup.querySelectorAll(".poppup__input"),
+			uid = poppup.querySelector(".poppup__title").dataset.uid;
+
+		console.log(uid);
+
+		let jobber = {}
+		if (uid && uid != "undefined") {
+			jobber["uid"] = uid
+		}
+
+		if (inputValues) {
+			inputValues.forEach(inputValue => {
+				let type = inputValue.dataset.type
+
+				if (type == "wedlock") {
+					if (inputValue.checked) {
+						jobber[type] = inputValue.value
+					}
+
+					return
+				}
+
+				jobber[type] = inputValue.value
+			})
+
+			transferJobber(jobber)
+
+			if (poppup) {
+				closePoppup(poppup);
+			}
+			//alert("заполните все поля")
+		}
+
+		return
+	}
 
 	switch (true) {
 		case e.target.classList.contains('poppups__poppupshowjobber'):
@@ -99,6 +138,16 @@ document.addEventListener("click", (e) => {
 
 // ? db
 const sendJobber = (jobber) => {
+	console.log(jobber);
+	if (!jobber.uid) {
+		jobber.uid = "12321312312321312312"
+	}
+
+	activeJobber.add(jobber)
+}
+
+
+const transferJobber = (jobber) => {
 	console.log(jobber);
 	if (!jobber.uid) {
 		jobber.uid = "12321312312321312312"
@@ -131,14 +180,14 @@ const fillReview = ($el, jobber = {}) => {
 
 				return;
 			case "wedlock":
-				if (previewInput.value === jobber.wedlock) {
+				if (previewInput.value == jobber.wedlock) {
 					previewInput.checked = true
 				}
 
 				return;
 			case "job":
 				//previewInput.value = jobber[type];
-				jobName = JOB.find((job) => (job.UID === jobber[type]))
+				jobName = JOB.find((job) => (job.UID == jobber[type]))
 				if (jobName) {
 					previewInput.value = jobName.name
 
