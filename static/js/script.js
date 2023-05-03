@@ -206,9 +206,7 @@ const dismissJobber = (jobber) => {
 	activeJobber.delete(jobber)
 }
 
-let listBody = document.querySelector(".list__body"),
-	listRows = document.querySelectorAll(".list__row"),
-	preview = document.querySelector(".mainform__preview");
+
 
 const fillReview = ($el, jobber = {}) => {
 	$el.querySelector(".poppup__title").dataset.uid = jobber.uid;

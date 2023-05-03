@@ -1,3 +1,7 @@
+let listBody = document.querySelector(".list__body"),
+	listRows = document.querySelectorAll(".list__row"),
+	preview = document.querySelector(".mainform__preview");
+
 class Jobber {
 	constructor(selector, options) {
 		this.$el = document.getElementById(selector);
@@ -31,6 +35,9 @@ class Jobber {
 		this.options.jobber = this.options.jobber.filter(jober => jober.uid != newJobber.uid)
 
 		this.uid = ""
+		preview.querySelectorAll('.poppup__btn').forEach((btn) => {
+			addNOActive(btn)
+		})
 		this.#update()
 	}
 
